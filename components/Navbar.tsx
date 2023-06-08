@@ -1,14 +1,10 @@
 "use client";
 import {
   NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-  NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 
@@ -16,9 +12,9 @@ import React from "react";
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-between p-4 w-full">
+    <nav className="flex justify-between p-4 w-full items-center">
       <Link href={"/"}>
-        <h1 className="text-xl font-semibold">CoinMover</h1>
+        <h1 className="text-xl font-semibold hover:bg-gray-100/70 p-2 rounded-md">CoinMover</h1>
       </Link>
 
       <NavigationMenu className="justify-end">
