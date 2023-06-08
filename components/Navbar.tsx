@@ -12,7 +12,7 @@ import React from "react";
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-between p-4 w-full items-center">
+    <nav className="flex justify-between p-4 w-full items-center bg-white z-[999]">
       <Link href={"/"}>
         <h1 className="text-xl font-semibold hover:bg-gray-100/70 p-2 rounded-md">CoinMover</h1>
       </Link>
