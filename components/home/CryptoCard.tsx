@@ -6,11 +6,11 @@ export default function CryptoCard() {
   return (
     <div className="relative w-fit">
       <Image
-        className="rounded-md"
+        className="rounded-md border-2 border-white"
         src="/card-img.jpg"
         alt="space picture"
-        width={300}
-        height={300}
+        width={400}
+        height={400}
       />
       <section className="text-white absolute bottom-4 left-4">
         <span className="text-sm">Address</span>
