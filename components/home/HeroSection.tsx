@@ -3,7 +3,7 @@ import React from "react";
 
 export default function HeroSection() {
   return (
-    <section className="flex flex-col gap-4 lg:flex-row lg:gap-[15%] items-center justify-center pt-[70%] lg:pt-0 h-[90vh]">
+    <section className="p-4 flex flex-col gap-4 lg:flex-row lg:gap-[15%] items-center justify-center pt-[70%] lg:pt-0 h-[90vh]">
       <section className="flex flex-col gap-5 items-center lg:items-start">
         <h2 className="text-3xl lg:text-4xl font-bold">
           Send Crypto Across The World!
