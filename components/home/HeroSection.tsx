@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import ConnectWalletBtn from "../ConnectWalletBtn";
 
 export default function HeroSection() {
   return (
@@ -12,9 +13,7 @@ export default function HeroSection() {
           Explore the crypto world. Buy and sell cryptocurrencies easily on
           CoinMover
         </p>
-        <button className="bg-indigo-600 text-white p-4 rounded-md hover:bg-indigo-700 w-full">
-          Connect Wallet
-        </button>
+        <ConnectWalletBtn />
         {/* Display Characteristics Here */}
         <section className="text-sm mt-10 w-full flex flex-col items-center">
           {/* Top Section */}
