@@ -38,7 +38,7 @@ export default function CoinMoverForm() {
         <CryptoCard />
         <form className="rounded-md flex flex-col gap-4 mt-4">
           <section className="flex flex-col gap-1">
-            <label htmlFor="recipient_address">Recipient's Address</label>
+            <label htmlFor="recipient_address">Recipient&apos;s Address</label>
             <input
               type="text"
               id="recipient_address"
