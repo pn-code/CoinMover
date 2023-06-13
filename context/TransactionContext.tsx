@@ -7,7 +7,12 @@ import { contractABI, contractAddress } from "@/smart_contract/utils/constants";
 export const TransactionContext = createContext({
   connectWallet: () => console.log("Populating function"),
 });
-const { ethereum } = window;
+
+let ethereum: any
+
+if (typeof window !== 'undefined') {
+  ethereum = (window as any).ethereum;
+}
 
 const getEthereumContract = async () => {
   const provider = new ethers.WebSocketProvider(ethereum);
