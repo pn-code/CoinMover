@@ -4,7 +4,9 @@ import { ethers } from "ethers";
 
 import { contractABI, contractAddress } from "@/smart_contract/utils/constants";
 
-export const TransactionContext = createContext({});
+export const TransactionContext = createContext({
+  connectWallet: () => console.log("Populating function"),
+});
 const { ethereum } = window;
 
 const getEthereumContract = async () => {
@@ -24,6 +26,8 @@ export const TransactionProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
+  const [connectedAccount, setConnectedAccount] = useState([]);
+
   useEffect(() => {
     const checkIfWalletIsConnected = async () => {
       if (!ethereum) return alert("Please install MetaMask to proceed.");
@@ -31,12 +35,26 @@ export const TransactionProvider = ({
       const accounts = await ethereum.request({ method: "eth_accounts" });
       console.log(accounts);
     };
-    
+
     checkIfWalletIsConnected();
   }, []);
 
+  const connectWallet = async () => {
+    try {
+      if (!ethereum) return alert("Please install MetaMask to proceed.");
+
+      const accounts = await ethereum.request({
+        method: "eth_requestAccounts",
+      });
+
+      setConnectedAccount(accounts[0]);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
-    <TransactionContext.Provider value={"test"}>
+    <TransactionContext.Provider value={{ connectWallet }}>
       {children}
     </TransactionContext.Provider>
   );
